@@ -4,13 +4,16 @@ const express = require('express');
 const { generateToken } = require('../auth/authenticate');
 const { authenticate } = require('../auth/authenticate');
 
+
 const User = require('../database/models/userModel');
 
 const router = express.Router();
 
+
+
 router.post('/register', async (req, res) => {
   const user = await User.registerUser(req.body);
-  return res.status(201).json({ user });
+  return res.status(201).json({ user, message: 'User created successfully' });
 });
 
 router.post('/login', (req, res) => {

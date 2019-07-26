@@ -3,10 +3,10 @@ module.exports = {
     commonjs: true,
     es6: true,
     node: true,
+    jest: true,
+  
   },
-  extends: [
-    'airbnb-base',
-  ],
+  extends: ['airbnb-base'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -19,6 +19,6 @@ module.exports = {
     'func-names': 0,
     'prefer-arrow-callback': 0,
     'space-before-function-paren': 0,
-    'no-multiple-empty-lines':0,
+    'no-multiple-empty-lines': 0,
   },
 };
