@@ -29,9 +29,23 @@ Implement an User Authentication System in order to access the jokes from the Jo
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. What is the purpose of using _sessions_?
+
+Basic usage of Sessions are a simple way to store data for individual users against a unique session ID. This can be used to persist state information between page requests. Session IDs are normally sent to the browser via session cookies and the ID is used to retrieve existing session data.
+
+
 1. What does bcrypt do to help us store passwords in a secure manner.
+
+BCrypt is based on the Blowfish block cipher cryptomatic algorithm and takes the form of an adaptive hash function
+Using a Key Factor, BCrypt is able to adjust the cost of hashing. With Key Factor changes, the hash output can be influenced. In this way, BCrypt remains extremely resistant to hacks, especially a type of password cracking called rainbow table.
+
+This Key Factor will continue to be a key feature as computers become more powerful in the future. Why? Well, because it compensates for these powerful computers and slows down hashing speed significantly. Ultimately slowing down the cracking process until it’s no longer a viable strategy.
+
 1. What does bcrypt do to slow down attackers?
+
+The Blowfish cipher is a fast block cipher except when changing keys, the parameters that establish the functional output of a cryptographic algorithm: each new key requires the pre-processing equivalent to encrypting about 4 kilobytes of text, which is considered very slow compared to other block ciphers. This slow key changing is beneficial to password hashing methods such as bcrypt since the extra computational demand helps protect against dictionary and brute force attacks by slowing down the attack.
+
 1. What are the three parts of the JSON Web Token?
+Header, Payload and Signature.
 
 ## Project Set Up
 
