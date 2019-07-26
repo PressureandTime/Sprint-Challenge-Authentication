@@ -1,12 +1,7 @@
 const jwt = require('jsonwebtoken');
-require('dotenv').config()
+require('dotenv').config();
 
-const jwtKey = process.env.JWT_SECRET || 'add a .env file to root of project with the JWT_SECRET variable';
-
-// quickly see what this file exports
-module.exports = {
-  authenticate,
-};
+const jwtKey = process.env.JWT_SECRET;
 
 // implementation details
 function authenticate(req, res, next) {

@@ -1,6 +1,8 @@
+const axios = require('axios');
 const bcrypt = require('bcryptjs');
 const express = require('express');
 const { generateToken } = require('../auth/authenticate');
+const { authenticate } = require('../auth/authenticate');
 
 const User = require('../database/models/userModel');
 
@@ -32,5 +34,22 @@ router.post('/login', (req, res) => {
       res.status(500).json(error);
     });
 });
+
+function getJokes(req, res) {
+  const requestOptions = {
+    headers: { accept: 'application/json' },
+  };
+
+  axios
+    .get('https://icanhazdadjoke.com/search', requestOptions)
+    .then(response => {
+      res.status(200).json(response.data.results);
+    })
+    .catch(err => {
+      res.status(500).json({ message: 'Error Fetching Jokes', error: err });
+    });
+}
+
+router.get('/api/jokes', authenticate, getJokes);
 
 module.exports = router;
