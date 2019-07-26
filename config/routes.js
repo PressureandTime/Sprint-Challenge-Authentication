@@ -1,20 +1,20 @@
-const axios = require('axios');
+// const axios = require('axios');
 
-const { authenticate } = require('../auth/authenticate');
+// const { authenticate } = require('../auth/authenticate');
 
-module.exports = server => {
-  server.post('/api/register', register);
-  server.post('/api/login', login);
-  server.get('/api/jokes', authenticate, getJokes);
-};
+// module.exports = server => {
+//   server.post('/api/register', register);
+//   server.post('/api/login', login);
+//   server.get('/api/jokes', authenticate, getJokes);
+// };
 
-function register(req, res) {
-  // implement user registration
-}
+// function register(req, res) {
+//   // implement user registration
+// }
 
-function login(req, res) {
-  // implement user login
-}
+// function login(req, res) {
+//   // implement user login
+// }
 
 function getJokes(req, res) {
   const requestOptions = {
